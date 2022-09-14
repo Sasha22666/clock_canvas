@@ -115,14 +115,11 @@
             context.textAlign = 'center';
             context.textBaseline = 'middle';
             context.fillText(currentDay.toLocaleTimeString(), clockCenterX, clockCenterY / 2);
+            
+            setTimeout(createClock, 1020 - new Date().getMilliseconds());
         }
         // Запускаем часы
-        setTimeout(function run() {
-            var time = new Date();
-            var mSec = time.getMilliseconds()
-            createClock();
-            setTimeout(run, 1000 - mSec + 20);
-        }, 20);
+         createClock();
 
     </script>
 </body>
